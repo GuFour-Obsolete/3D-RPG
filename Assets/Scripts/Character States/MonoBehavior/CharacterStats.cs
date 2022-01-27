@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
+  public event Action<int, int> UpdateHealthBarOnAttack;
   public CharactorData_SO templateData;
   public CharactorData_SO characterData;
 
@@ -23,7 +24,7 @@ public class CharacterStats : MonoBehaviour
 
   #region Read from Data_SO
 
-  public int ManxHealth
+  public int MaxHealth
   {
     get { if (characterData != null) return characterData.maxHealth; else return 0; }
     set { characterData.maxHealth = value; }
@@ -66,13 +67,20 @@ public class CharacterStats : MonoBehaviour
       defener.GetComponent<Animator>().SetTrigger("Hit");
     }
     //TODO:Update UI
+    UpdateHealthBarOnAttack?.Invoke(CurrentHealth, MaxHealth);
     //TODO:æ≠—ÈUpdate
+    if (CurrentHealth <= 0)
+    {
+      attacker.characterData.UpdateExp(characterData.killPoint);
+    }
   }
 
   public void TakeDamage(int damage, CharacterStats defener)
   {
-
-
+    int currentDamage = Mathf.Max(damage - defener.CurrentDefence, 0);
+    CurrentHealth = Mathf.Max(CurrentHealth - currentDamage, 0);
+    UpdateHealthBarOnAttack?.Invoke(CurrentHealth, MaxHealth);
+    GameManager.Instance.playerStats.characterData.UpdateExp(characterData.killPoint);
   }
 
   private int CurrentDamage()

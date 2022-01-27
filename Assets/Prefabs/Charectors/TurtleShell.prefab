@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 34547601699331928}
   - component: {fileID: 34547601699331927}
   - component: {fileID: 34547601699331926}
+  - component: {fileID: 3338814948173590562}
   m_Layer: 0
   m_Name: TurtleShell
   m_TagString: Enemy
@@ -248,6 +249,7 @@ Transform:
   m_Children:
   - {fileID: 30154303150697839}
   - {fileID: 30106685248953077}
+  - {fileID: 4141769782849774783}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -337,6 +339,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3338814948173590562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34968711502378083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa50840df494044dbdc83a046b979fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthUIPrefab: {fileID: 7553228921010177054, guid: 76bc486668cf8884b8e1a589ef59fa52, type: 3}
+  barPoint: {fileID: 4141769782849774783}
+  alwaysVisible: 0
+  visibleTime: 0
 --- !u!1 &34980372849785553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,4 +1182,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 32876140360929259}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2626057447171901042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4141769782849774783}
+  m_Layer: 0
+  m_Name: HealthBarPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4141769782849774783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2626057447171901042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 30368978261892697}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
