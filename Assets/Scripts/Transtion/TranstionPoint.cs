@@ -11,7 +11,7 @@ public class TranstionPoint : MonoBehaviour
   public string sceneName;
   public TranstionType transtionType;
   public TranstionDestination.DestinationTag destinationTag;
-  public bool canTrans;
+  bool canTrans;
 
   private void Update()
   {

@@ -21,7 +21,7 @@ public class MouseManager : Singleton<MouseManager>
   protected override void Awake()
   {
     base.Awake();
-    //DontDestroyOnLoad(this);
+    DontDestroyOnLoad(this);
   }
 
   private void Update()
